@@ -1,0 +1,14 @@
+[Unit]
+Description=Qingmou Eye Care Platform (护眼平台)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/qingmou/eye-care-platform/server
+ExecStart=/usr/bin/python3 /opt/qingmou/eye-care-platform/server/server.py
+Restart=always
+RestartSec=3
+EnvironmentFile=/etc/qingmou/ark.env
+
+[Install]
+WantedBy=multi-user.target
